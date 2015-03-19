@@ -5942,3 +5942,65 @@ code {
   line-height: 15px;
   padding: 12px 4px !important;
 }
+dd {
+  overflow: auto;
+}
+@media only screen and (max-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    display: none;
+    /* position: absolute; */
+  
+    /* top: -9999px; */
+  
+    /* left: -9999px; */
+  
+  }
+  tr {
+    border: 1px solid #ccc;
+  }
+  td.name,
+  td.type,
+  td.attributes {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 100px;
+    min-height: 20px;
+  }
+  td:before {
+    /* Now like a table header */
+  
+    position: absolute;
+    /* Top/left values mimic padding */
+  
+    /* top: 6px; */
+  
+    left: 6px;
+    width: 90px;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  /*
+  	Label the data
+  	*/
+  td.name:before {
+    content: "Name";
+  }
+  td.type:before {
+    content: "Type";
+  }
+  td.attributes:before {
+    content: "Attributes";
+  }
+}
